@@ -1,16 +1,28 @@
+/*
+Tests to be run through your solution. Should be in the format:
 const tests = [
-  [[1, 2, 5, 6, 7], 3],
-  [[-3, -1, 5, 7], 1],
-  [[1, 2, 3, 8, 5, 6, 7, 10, 9, 12, 11], 4],
-  [[0, 4, 3, 6, 2, 1, 8, 7, 9, 7, 14, 13, 12], 5],
-  [[20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2], 1],
-  [
-    [
-      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
-      22, 23, 24, 25, 26, 27,
-    ],
-    28,
-  ],
-];
+  {
+    params: [],
+    answer
+  }
+]
+*/
 
+const tests = [
+  {
+    params: [
+      "id,name,age,act.,room,dep.\n1,Jack,68,T,13,8\n17,Betty,28,F,15,7",
+      "age",
+    ],
+    answer: 68,
+  },
+  {
+    params: ["area,land\n3722,CN\n6612,RU\n3855,CA\n3797,USA", "area"],
+    answer: 6612,
+  },
+  {
+    params: ["city,temp2,temp\nParis,7,-3\nDubai,4,-4\nPorto,-1,-2", "temp"],
+    answer: -2,
+  },
+];
 module.exports = { tests };
