@@ -1,3 +1,8 @@
+/*
+Test Runner, do not need to change anything other than the
+NUMBER_OF_ITERATIONS if you would like to change how many times it runs
+*/
+
 const { tests } = require("./test-input");
 const { solution } = require("./solution");
 const chalk = require("chalk");
