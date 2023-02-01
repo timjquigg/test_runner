@@ -31,8 +31,11 @@ for (let i = 0; i < NUMBER_OF_ITERATIONS; i++) {
   }
 }
 
-const averageTime =
-  durations.reduce((curr, prev) => curr + prev, 0) / durations.length;
+const totalTime = durations.reduce((curr, prev) => curr + prev, 0);
+const prettyTotalTime = Math.round((totalTime + Number.EPSILON) * 100) / 100;
+
+// const averageTime = totalTime / durations.length;
+// const prettyAverageTime = Math.round((averageTime + Number.EPSILON) * 10000) / 10000;
 
 errors.length > 0
   ? log(
@@ -42,6 +45,6 @@ errors.length > 0
     )
   : log(
       chalk.green(
-        `${tests.length} tests completed ${NUMBER_OF_ITERATIONS} times in average time of ${averageTime} ms to complete the ${tests.length} tests.`
+        `${tests.length} tests completed ${NUMBER_OF_ITERATIONS} times in ${prettyTotalTime} ms.`
       )
     );

@@ -17,7 +17,6 @@ const solution = (S, C) => {
   const colCValues = data.map((el) => {
     return Number(el.split(",")[colCIndex]);
   });
-
   return Math.max(...colCValues);
 };
 
