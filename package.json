@@ -1,6 +1,9 @@
 {
   "scripts": {
-    "test": "node test-runner.js"
+    "test": "tsc && node ./build/test-runner.js"
+  },
+  "devDependencies": {
+    "typescript": "^4.9.5"
   },
   "dependencies": {
     "chalk": "^4.1.2"
