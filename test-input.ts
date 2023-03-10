@@ -8,7 +8,12 @@ const tests = [
 ]
 */
 
-const tests = [
+interface Test<T, U> {
+  params: Array<T>;
+  answer: U;
+}
+
+export const tests: Test<string, number>[] = [
   {
     params: [
       "id,name,age,act.,room,dep.\n1,Jack,68,T,13,8\n17,Betty,28,F,15,7",
@@ -25,4 +30,3 @@ const tests = [
     answer: -2,
   },
 ];
-module.exports = { tests };

@@ -3,15 +3,18 @@ Test Runner, do not need to change anything other than the
 NUMBER_OF_ITERATIONS if you would like to change how many times it runs
 */
 
-const { tests } = require("./test-input");
-const { solution } = require("./solution");
-const chalk = require("chalk");
-const log = console.log;
+// const { tests } = require("./test-input");
+import { tests } from "./test-input.js";
+// const { solution } = require("./solution");
+import { solution } from "./solution.js";
+// const chalk = require("chalk");
+import chalk from "chalk";
+// const log = console.console.log;
 
 const NUMBER_OF_ITERATIONS = 1000;
-const durations = [];
+const durations: number[] = [];
 
-const errors = [];
+const errors: number[] = [];
 
 for (let i = 0; i < NUMBER_OF_ITERATIONS; i++) {
   const start = performance.now();
@@ -19,14 +22,14 @@ for (let i = 0; i < NUMBER_OF_ITERATIONS; i++) {
     const answer = solution(...test.params);
     if (i === 0) {
       if (answer !== test.answer) errors.push(i);
-      log(chalk.blue("Test input:"));
-      log(chalk.yellow(JSON.stringify(test.params)));
-      log(chalk.blue("Expected Output:"), test.answer);
-      log(
+      console.log(chalk.blue("Test input:"));
+      console.log(chalk.yellow(JSON.stringify(test.params)));
+      console.log(chalk.blue("Expected Output:"), test.answer);
+      console.log(
         chalk.blue("Received:"),
         errors.length > 0 ? chalk.red(answer) : chalk.green(answer)
       );
-      log("\n");
+      console.log("\n");
     }
   }
   const finish = performance.now();
@@ -43,12 +46,12 @@ const prettyTotalTime = Math.round((totalTime + Number.EPSILON) * 100) / 100;
 // const prettyAverageTime = Math.round((averageTime + Number.EPSILON) * 10000) / 10000;
 
 errors.length > 0
-  ? log(
+  ? console.log(
       chalk.red(
         `Completed ${tests.length} tests and found errors in ${errors.length} tests.`
       )
     )
-  : log(
+  : console.log(
       chalk.green(
         `${tests.length} tests completed ${NUMBER_OF_ITERATIONS} times in ${prettyTotalTime} ms.`
       )

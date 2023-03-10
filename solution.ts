@@ -7,7 +7,9 @@ const solution = (params) => {
 
 */
 
-const solution = (S, C) => {
+type Solution<T, U> = (...args: T[]) => U;
+
+export const solution: Solution<string, number> = (S, C) => {
   const rows = S.split("\n");
   const header = rows[0];
   const data = rows.slice(1);
@@ -19,5 +21,3 @@ const solution = (S, C) => {
   });
   return Math.max(...colCValues);
 };
-
-module.exports = { solution };
